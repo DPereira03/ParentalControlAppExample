@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.33530.505
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ParentalControlAppExample", "ParentalControlAppExample\ParentalControlAppExample.csproj", "{F23F466F-3BD6-4468-AF7F-6EBD5E3B826E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F23F466F-3BD6-4468-AF7F-6EBD5E3B826E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F23F466F-3BD6-4468-AF7F-6EBD5E3B826E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F23F466F-3BD6-4468-AF7F-6EBD5E3B826E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F23F466F-3BD6-4468-AF7F-6EBD5E3B826E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {BBA50E37-47ED-4EE5-8866-D940C97BBA4B}
+	EndGlobalSection
+EndGlobal
