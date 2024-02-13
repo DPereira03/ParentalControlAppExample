@@ -61,6 +61,8 @@ namespace ParentalControlAppExample
         private void SearchBut_Click(object sender, EventArgs e)
         {
             string UserSearch = SearchBar.Text;
+            string text;
+            string OUTDEC;
 
             if (label1.Text.Contains("VPN"))
             {
@@ -74,17 +76,22 @@ namespace ParentalControlAppExample
 
                     encryptedData = RSAEncrypt(dataToEncrypt, RSA.ExportParameters(false), false);
 
+                    string folder = @"C:\Users\djper\OneDrive\Documents\Year 3\.Final Study\.Main work\Program\ParentalControlAppExample\ParentalControlAppExample\EncText.txt";
+                    File.WriteAllText(folder, Encoding.UTF8.GetString(encryptedData));
                     decryptedData = RSADecrypt(encryptedData, RSA.ExportParameters(true), false);
-                    string OUTDEC = Encoding.UTF8.GetString(decryptedData);
+                    OUTDEC = Encoding.UTF8.GetString(decryptedData);
 
-
-                    MessageBox.Show("Decrypted: "+ OUTDEC);
                 }
 
-            }
+                text = "Showing results for " + OUTDEC;
+                MessageBox.Show(text);
 
-            string text = "Showing results for " + UserSearch;
-            MessageBox.Show(text);
+            }
+            else
+            {
+                text = "Showing results for " + UserSearch;
+                MessageBox.Show(text);
+            }
 
         }
     }
