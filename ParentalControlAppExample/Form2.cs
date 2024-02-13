@@ -36,6 +36,7 @@ namespace ParentalControlAppExample
 
             string text = "Showing results for " + UserSearch;
             MessageBox.Show(text);
+
         }
     }
 }
