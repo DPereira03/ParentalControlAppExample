@@ -71,13 +71,41 @@ namespace ParentalControlAppExample
 
         private void ScrButton_Click(object sender, EventArgs e)
         {
-            timer1.Enabled = true;
-            timer1.Start();
+            secondForm.label2.Visible = true;
+            if (timeleft == 20)
+            {
+                timer1.Start();
+                DisplayBox.Text = "Time out activated";
+            }
+            else
+            {
+                timer1.Stop();
+                timeleft = 20;
+                DisplayBox.Text = "Time out deactivated";
+                secondForm.Visible = true;
+                secondForm.label2.Visible = false;
+                secondForm.label2.Text = "Time left 20 seconds";
+            }
         }
 
+        int timeleft = 20;
         private void timer1_Tick(object sender, EventArgs e)
         {
+            if (timeleft > 0)
+            {
+                timeleft = timeleft - 1;
+                secondForm.label2.Text = "Time left " + timeleft + " seconds";
+            }
+            else
+            {
+                timer1.Stop();
+                if (secondForm.Visible == true)
+                {
+                    secondForm.Visible = false;
+                    DisplayBox.Text = "Timed out";
+                }
 
+            }
         }
 
         private void AppButton_Click(object sender, EventArgs e)

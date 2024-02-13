@@ -34,6 +34,7 @@
             BetApp = new Button();
             SearchBar = new TextBox();
             SearchBut = new Button();
+            label2 = new Label();
             SuspendLayout();
             // 
             // label1
@@ -94,11 +95,22 @@
             SearchBut.UseVisualStyleBackColor = true;
             SearchBut.Click += SearchBut_Click;
             // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Location = new Point(608, 76);
+            label2.Name = "label2";
+            label2.Size = new Size(145, 20);
+            label2.TabIndex = 6;
+            label2.Text = "Time left 20 seconds";
+            label2.Visible = false;
+            // 
             // Form2
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(label2);
             Controls.Add(SearchBut);
             Controls.Add(SearchBar);
             Controls.Add(BetApp);
@@ -119,5 +131,6 @@
         public Button BetApp;
         public TextBox SearchBar;
         public Button SearchBut;
+        public Label label2;
     }
 }

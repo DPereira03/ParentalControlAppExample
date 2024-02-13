@@ -96,7 +96,7 @@ namespace ParentalControlAppExample
             {
                 Access = WEBCHECK(checkText);
             }
-            
+
 
             if (Access != "DENIED")
             {
@@ -147,8 +147,8 @@ namespace ParentalControlAppExample
             {
                 MessageBox.Show("Game Blocked");
             }
-            else 
-            { 
+            else
+            {
                 MessageBox.Show("Game Loaded");
             }
         }
