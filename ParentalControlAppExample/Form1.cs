@@ -6,7 +6,9 @@ namespace ParentalControlAppExample
     {
         Form2 secondForm;
         int count = 0;
+        bool Checker = false;
         public static string option = "PLAY";
+        public static string WebOption = "OPEN";
 
         public Form1()
         {
@@ -81,13 +83,31 @@ namespace ParentalControlAppExample
         private void AppButton_Click(object sender, EventArgs e)
         {
             if (option == "PLAY")
-            { 
+            {
                 option = "STOP";
+                DisplayBox.Text = "Game Filter Activated";
             }
             else
             {
                 option = "PLAY";
+                DisplayBox.Text = "Game Filter Deactivated";
             }
+        }
+
+        private void WebButton_Click(object sender, EventArgs e)
+        {
+
+            if (WebOption == "OPEN")
+            {
+                WebOption = "CLOSE";
+                DisplayBox.Text = "Website Filter Activated";
+            }
+            else
+            {
+                WebOption = "OPEN";
+                DisplayBox.Text = "Website Filter Deactivated";
+            }
+
         }
     }
 }

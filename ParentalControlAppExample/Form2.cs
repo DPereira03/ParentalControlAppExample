@@ -58,41 +58,82 @@ namespace ParentalControlAppExample
         }
 
 
+        public string WebCheck = "ACCESS";
+        public string checkText = "";
+        public string WEBCHECK(string checkText)
+        {
+
+            string filepath = "C:\\Users\\djper\\OneDrive\\Documents\\Year 3\\.Final Study\\.Main work\\Program\\ParentalControlAppExample\\ParentalControlAppExample\\Websites.txt";
+
+
+            string[] lines = File.ReadAllLines(filepath);
+            foreach (string line in lines)
+            {
+                if (line.Contains(checkText))
+                {
+                    WebCheck = "DENIED";
+                    break;
+                }
+                else
+                {
+                    WebCheck = "ACCESS";
+                }
+            }
+
+            return WebCheck;
+
+        }
+
         private void SearchBut_Click(object sender, EventArgs e)
         {
             string UserSearch = SearchBar.Text;
+            checkText = UserSearch;
             string text;
             string OUTDEC;
+            string Access = "ACCESS";
 
-            if (label1.Text.Contains("VPN"))
+            if (Form1.WebOption == "CLOSE")
             {
+                Access = WEBCHECK(checkText);
+            }
+            
 
-                byte[] dataToEncrypt = Encoding.UTF8.GetBytes(UserSearch);
-                byte[] encryptedData;
-                byte[] decryptedData;
-
-                using (RSACryptoServiceProvider RSA = new RSACryptoServiceProvider())
+            if (Access != "DENIED")
+            {
+                if (label1.Text.Contains("VPN"))
                 {
 
-                    encryptedData = RSAEncrypt(dataToEncrypt, RSA.ExportParameters(false), false);
+                    byte[] dataToEncrypt = Encoding.UTF8.GetBytes(UserSearch);
+                    byte[] encryptedData;
+                    byte[] decryptedData;
 
-                    string folder = @"C:\Users\djper\OneDrive\Documents\Year 3\.Final Study\.Main work\Program\ParentalControlAppExample\ParentalControlAppExample\EncText.txt";
-                    File.WriteAllText(folder, Encoding.UTF8.GetString(encryptedData));
+                    using (RSACryptoServiceProvider RSA = new RSACryptoServiceProvider())
+                    {
+
+                        encryptedData = RSAEncrypt(dataToEncrypt, RSA.ExportParameters(false), false);
+
+                        string folder = @"C:\Users\djper\OneDrive\Documents\Year 3\.Final Study\.Main work\Program\ParentalControlAppExample\ParentalControlAppExample\EncText.txt";
+                        File.WriteAllText(folder, Encoding.UTF8.GetString(encryptedData));
 
 
-                    decryptedData = RSADecrypt(encryptedData, RSA.ExportParameters(true), false);
-                    OUTDEC = Encoding.UTF8.GetString(decryptedData);
+                        decryptedData = RSADecrypt(encryptedData, RSA.ExportParameters(true), false);
+                        OUTDEC = Encoding.UTF8.GetString(decryptedData);
+
+                    }
+
+                    text = "Showing results for " + OUTDEC;
+                    MessageBox.Show(text);
 
                 }
-
-                text = "Showing results for " + OUTDEC;
-                MessageBox.Show(text);
-
+                else
+                {
+                    text = "Showing results for " + UserSearch;
+                    MessageBox.Show(text);
+                }
             }
             else
             {
-                text = "Showing results for " + UserSearch;
-                MessageBox.Show(text);
+                MessageBox.Show("Access Denied");
             }
 
         }

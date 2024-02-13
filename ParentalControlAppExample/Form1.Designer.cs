@@ -77,6 +77,7 @@
             WebButton.TabIndex = 3;
             WebButton.Text = "Website Filter";
             WebButton.UseVisualStyleBackColor = true;
+            WebButton.Click += WebButton_Click;
             // 
             // AppButton
             // 
