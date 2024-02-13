@@ -1,9 +1,12 @@
+using System.Drawing.Imaging;
+
 namespace ParentalControlAppExample
 {
     public partial class Form1 : Form
     {
         Form2 secondForm;
         int count = 0;
+        public static string option = "PLAY";
 
         public Form1()
         {
@@ -73,6 +76,18 @@ namespace ParentalControlAppExample
         private void timer1_Tick(object sender, EventArgs e)
         {
 
+        }
+
+        private void AppButton_Click(object sender, EventArgs e)
+        {
+            if (option == "PLAY")
+            { 
+                option = "STOP";
+            }
+            else
+            {
+                option = "PLAY";
+            }
         }
     }
 }

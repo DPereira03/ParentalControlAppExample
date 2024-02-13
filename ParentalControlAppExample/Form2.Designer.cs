@@ -74,6 +74,7 @@
             BetApp.TabIndex = 3;
             BetApp.Text = "Betting App";
             BetApp.UseVisualStyleBackColor = true;
+            BetApp.Click += BetApp_Click;
             // 
             // SearchBar
             // 

@@ -86,6 +86,7 @@
             AppButton.TabIndex = 4;
             AppButton.Text = "Application filter";
             AppButton.UseVisualStyleBackColor = true;
+            AppButton.Click += AppButton_Click;
             // 
             // ScrButton
             // 

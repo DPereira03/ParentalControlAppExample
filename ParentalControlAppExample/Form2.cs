@@ -29,32 +29,32 @@ namespace ParentalControlAppExample
 
         public static byte[] RSAEncrypt(byte[] DataToEncrypt, RSAParameters RSAKeyInfo, bool DoOAEPPadding)
         {
-                byte[] encryptedData;
- 
-                using (RSACryptoServiceProvider RSA = new RSACryptoServiceProvider())
-                {
+            byte[] encryptedData;
 
-                    RSA.ImportParameters(RSAKeyInfo);
-  
-                    encryptedData = RSA.Encrypt(DataToEncrypt, DoOAEPPadding);
-                }
-                return encryptedData;
+            using (RSACryptoServiceProvider RSA = new RSACryptoServiceProvider())
+            {
+
+                RSA.ImportParameters(RSAKeyInfo);
+
+                encryptedData = RSA.Encrypt(DataToEncrypt, DoOAEPPadding);
+            }
+            return encryptedData;
 
         }
 
         public static byte[] RSADecrypt(byte[] DataToDecrypt, RSAParameters RSAKeyInfo, bool DoOAEPPadding)
         {
 
-                byte[] decryptedData;
+            byte[] decryptedData;
 
-                using (RSACryptoServiceProvider RSA = new RSACryptoServiceProvider())
-                {
- 
-                    RSA.ImportParameters(RSAKeyInfo);
-  
-                    decryptedData = RSA.Decrypt(DataToDecrypt, DoOAEPPadding);
-                }
-                return decryptedData;
+            using (RSACryptoServiceProvider RSA = new RSACryptoServiceProvider())
+            {
+
+                RSA.ImportParameters(RSAKeyInfo);
+
+                decryptedData = RSA.Decrypt(DataToDecrypt, DoOAEPPadding);
+            }
+            return decryptedData;
         }
 
 
@@ -78,6 +78,8 @@ namespace ParentalControlAppExample
 
                     string folder = @"C:\Users\djper\OneDrive\Documents\Year 3\.Final Study\.Main work\Program\ParentalControlAppExample\ParentalControlAppExample\EncText.txt";
                     File.WriteAllText(folder, Encoding.UTF8.GetString(encryptedData));
+
+
                     decryptedData = RSADecrypt(encryptedData, RSA.ExportParameters(true), false);
                     OUTDEC = Encoding.UTF8.GetString(decryptedData);
 
@@ -93,6 +95,21 @@ namespace ParentalControlAppExample
                 MessageBox.Show(text);
             }
 
+        }
+
+        public void BetApp_Click(object sender, EventArgs e)
+        {
+            string check = Form1.option;
+
+
+            if (check == "STOP")
+            {
+                MessageBox.Show("Game Blocked");
+            }
+            else 
+            { 
+                MessageBox.Show("Game Loaded");
+            }
         }
     }
 }
