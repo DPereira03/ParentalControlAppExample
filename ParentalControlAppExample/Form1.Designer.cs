@@ -59,6 +59,7 @@
             AIbutton.TabIndex = 1;
             AIbutton.Text = "AI Monitor";
             AIbutton.UseVisualStyleBackColor = true;
+            AIbutton.Click += AIbutton_Click;
             // 
             // SOSButton
             // 

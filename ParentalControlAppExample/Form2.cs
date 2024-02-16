@@ -16,6 +16,7 @@ namespace ParentalControlAppExample
     {
         Form1 firstForm;
         public string WhereAmI = "I am in ThisShop in ThisPlace";
+        public string Detection = "Nothing";
         public Form2(Form1 parent)
         {
             InitializeComponent();
@@ -61,6 +62,7 @@ namespace ParentalControlAppExample
 
         public string WebCheck = "ACCESS";
         public string checkText = "";
+        public string related = "nothing";
         public string WEBCHECK(string checkText)
         {
 
@@ -95,7 +97,12 @@ namespace ParentalControlAppExample
 
             if (Form1.WebOption == "CLOSE")
             {
-                Access = WEBCHECK(checkText);
+                Access = WEBCHECK(checkText.ToLower());
+            }
+
+            if (Form1.AIOption == "ON")
+            {
+                firstForm.WordingCheck(checkText.ToLower());
             }
 
 
@@ -125,16 +132,48 @@ namespace ParentalControlAppExample
                     text = "Showing results for " + OUTDEC;
                     MessageBox.Show(text);
 
+                    if (text.ToLower().Contains("devil"))
+                    {
+                        related = "hell";
+                    }
+                    else if (text.ToLower().Contains("hello"))
+                    {
+                        related = "smile";
+                    }
+                    else
+                    {
+                        related = "Nothing";
+                    }
+
+
                 }
                 else
                 {
                     text = "Showing results for " + UserSearch;
                     MessageBox.Show(text);
+
+                    if (text.ToLower().Contains("devil"))
+                    {
+                        related = "hell";
+                    }
+                    else if (text.ToLower().Contains("hello"))
+                    {   
+                        related = "smile";
+                    }
+                    else
+                    {
+                        related = "Nothing";
+                    }
                 }
             }
             else
             {
                 MessageBox.Show("Access Denied");
+            }
+
+            if (firstForm.Found == 0)
+            {
+                firstForm.WordingCheck(related);
             }
 
         }

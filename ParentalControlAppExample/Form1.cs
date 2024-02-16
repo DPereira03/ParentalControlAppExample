@@ -1,4 +1,6 @@
 using System.Drawing.Imaging;
+using System.Security.Cryptography.Xml;
+using System.Text;
 
 namespace ParentalControlAppExample
 {
@@ -7,14 +9,18 @@ namespace ParentalControlAppExample
         Form2 secondForm;
         int count = 0;
         int counter = 0;
+        public int Found = 0;
         bool Checker = false;
         public static string option = "PLAY";
         public static string WebOption = "OPEN";
+        public static string AIOption = "OFF";
+        bool AI = false;
 
         public Form1()
         {
             InitializeComponent();
             secondForm = new Form2(this);
+
         }
 
         public void Form1_Load(object sender, EventArgs e)
@@ -152,5 +158,62 @@ namespace ParentalControlAppExample
                 counter = 0;
             }
         }
+
+        private void AIbutton_Click(object sender, EventArgs e)
+        {
+            if (AIOption == "OFF")
+            {
+                AIOption = "ON";
+                DisplayBox.Text = "AI monitoring Activated";
+            }
+            else
+            {
+                AIOption = "OFF";
+                DisplayBox.Text = "AI monitoring Deactivated";
+            }
+
+        }
+
+        public string harm;
+        public string WordingCheck(string checkText)
+        {
+
+            string filepath = "C:\\Users\\djper\\OneDrive\\Documents\\Year 3\\.Final Study\\.Main work\\Program\\ParentalControlAppExample\\ParentalControlAppExample\\AIWords.txt";
+
+
+            string[] lines = File.ReadAllLines(filepath);
+            foreach (string line in lines)
+            {
+                if (line.Contains(checkText))
+                {
+                    harm = "yes";
+                    break;
+                }
+                else
+                {
+                    harm = "no";
+                }
+            }
+
+
+            if (harm == "yes" && Found == 1)
+            {
+                MessageBox.Show("Potenital harm detected, search term: " + checkText);
+            }
+            else if (harm == "yes" && secondForm.related == "hell" && Found == 0)
+            {
+                MessageBox.Show("Potenital harm detected, search term: " + secondForm.checkText + 
+                    ", results show: " + checkText);
+                string folder = @"C:\Users\djper\OneDrive\Documents\Year 3\.Final Study\.Main work\Program\ParentalControlAppExample\ParentalControlAppExample\AIWords.txt";
+                string newText = Environment.NewLine + secondForm.checkText;
+                File.AppendAllText(folder, newText.ToLower());
+                Found = 1;
+            }
+
+            return harm;
+
+        }
+
+
     }
 }
