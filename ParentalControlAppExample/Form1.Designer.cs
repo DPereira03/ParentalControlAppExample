@@ -49,6 +49,7 @@
             LocButton.TabIndex = 0;
             LocButton.Text = "Location";
             LocButton.UseVisualStyleBackColor = true;
+            LocButton.Click += LocButton_Click;
             // 
             // AIbutton
             // 

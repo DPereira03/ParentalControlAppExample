@@ -6,6 +6,7 @@ namespace ParentalControlAppExample
     {
         Form2 secondForm;
         int count = 0;
+        int counter = 0;
         bool Checker = false;
         public static string option = "PLAY";
         public static string WebOption = "OPEN";
@@ -136,6 +137,20 @@ namespace ParentalControlAppExample
                 DisplayBox.Text = "Website Filter Deactivated";
             }
 
+        }
+
+        private void LocButton_Click(object sender, EventArgs e)
+        {
+            if (counter == 0)
+            {
+                DisplayBox.Text = secondForm.WhereAmI;
+                counter = 1;
+            }
+            else
+            {
+                DisplayBox.Text = "Location tracker disabled";
+                counter = 0;
+            }
         }
     }
 }

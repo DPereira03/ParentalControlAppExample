@@ -15,6 +15,7 @@ namespace ParentalControlAppExample
     public partial class Form2 : Form
     {
         Form1 firstForm;
+        public string WhereAmI = "I am in ThisShop in ThisPlace";
         public Form2(Form1 parent)
         {
             InitializeComponent();
