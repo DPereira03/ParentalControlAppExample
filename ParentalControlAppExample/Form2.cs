@@ -63,6 +63,7 @@ namespace ParentalControlAppExample
         public string WebCheck = "ACCESS";
         public string checkText = "";
         public string related = "nothing";
+        public int wordFound = 0;
         public string WEBCHECK(string checkText)
         {
 
@@ -157,7 +158,7 @@ namespace ParentalControlAppExample
                         related = "hell";
                     }
                     else if (text.ToLower().Contains("hello"))
-                    {   
+                    {
                         related = "smile";
                     }
                     else
@@ -174,6 +175,7 @@ namespace ParentalControlAppExample
             if (firstForm.Found == 0)
             {
                 firstForm.WordingCheck(related);
+                related = "Found";
             }
 
         }
@@ -185,12 +187,17 @@ namespace ParentalControlAppExample
 
             if (check == "STOP")
             {
-                MessageBox.Show("Game Blocked");
+                MessageBox.Show("Application Blocked");
             }
             else
             {
-                MessageBox.Show("Game Loaded");
+                MessageBox.Show("Application Loaded");
             }
+        }
+
+        private void GameApp_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Application Loaded");
         }
     }
 }

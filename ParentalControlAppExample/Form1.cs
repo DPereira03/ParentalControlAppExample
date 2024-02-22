@@ -35,12 +35,14 @@ namespace ParentalControlAppExample
                 secondForm.label1.Text = "Internet Search: Wi-Fi (VPN)";
                 DisplayBox.Text = "VPN Activated";
                 count++;
+                VPNButton.BackColor = Color.Lime;
             }
             else
             {
                 secondForm.label1.Text = "Internet Search: Wi-Fi ";
                 DisplayBox.Text = "VPN Deactivated";
                 count = 0;
+                VPNButton.BackColor = Color.Crimson;
             }
 
 
@@ -53,11 +55,13 @@ namespace ParentalControlAppExample
             {
                 secondForm.Visible = false;
                 DisplayBox.Text = "Screen Lock Activated";
+                LckButton.BackColor = Color.Lime;
             }
             else
             {
                 secondForm.Visible = true;
                 DisplayBox.Text = "Screen Lock Deactivated";
+                LckButton.BackColor = Color.Crimson;
             }
         }
 
@@ -68,11 +72,13 @@ namespace ParentalControlAppExample
             {
                 secondForm.SOSHelp.Visible = false;
                 DisplayBox.Text = "SOS Button Deactivated";
+                SOSButton.BackColor = Color.Crimson;
             }
             else
             {
                 secondForm.SOSHelp.Visible = true;
                 DisplayBox.Text = "SOS Button Activated";
+                SOSButton.BackColor = Color.Lime;
             }
         }
 
@@ -83,6 +89,7 @@ namespace ParentalControlAppExample
             {
                 timer1.Start();
                 DisplayBox.Text = "Time out activated";
+                ScrButton.BackColor = Color.Lime;
             }
             else
             {
@@ -92,6 +99,7 @@ namespace ParentalControlAppExample
                 secondForm.Visible = true;
                 secondForm.label2.Visible = false;
                 secondForm.label2.Text = "Time left 20 seconds";
+                ScrButton.BackColor = Color.Crimson;
             }
         }
 
@@ -121,11 +129,13 @@ namespace ParentalControlAppExample
             {
                 option = "STOP";
                 DisplayBox.Text = "Game Filter Activated";
+                AppButton.BackColor = Color.Lime;
             }
             else
             {
                 option = "PLAY";
                 DisplayBox.Text = "Game Filter Deactivated";
+                AppButton.BackColor = Color.Crimson;
             }
         }
 
@@ -136,11 +146,13 @@ namespace ParentalControlAppExample
             {
                 WebOption = "CLOSE";
                 DisplayBox.Text = "Website Filter Activated";
+                WebButton.BackColor = Color.Lime;
             }
             else
             {
                 WebOption = "OPEN";
                 DisplayBox.Text = "Website Filter Deactivated";
+                WebButton.BackColor = Color.Crimson;
             }
 
         }
@@ -151,11 +163,13 @@ namespace ParentalControlAppExample
             {
                 DisplayBox.Text = secondForm.WhereAmI;
                 counter = 1;
+                LocButton.BackColor = Color.Lime;
             }
             else
             {
                 DisplayBox.Text = "Location tracker disabled";
                 counter = 0;
+                LocButton.BackColor = Color.Crimson;
             }
         }
 
@@ -165,11 +179,13 @@ namespace ParentalControlAppExample
             {
                 AIOption = "ON";
                 DisplayBox.Text = "AI monitoring Activated";
+                AIbutton.BackColor = Color.Lime;
             }
             else
             {
                 AIOption = "OFF";
                 DisplayBox.Text = "AI monitoring Deactivated";
+                AIbutton.BackColor = Color.Crimson;
             }
 
         }
@@ -196,13 +212,13 @@ namespace ParentalControlAppExample
             }
 
 
-            if (harm == "yes" && Found == 1)
+            if (harm == "yes" && secondForm.related != "hell")
             {
                 MessageBox.Show("Potenital harm detected, search term: " + checkText);
             }
             else if (harm == "yes" && secondForm.related == "hell" && Found == 0)
             {
-                MessageBox.Show("Potenital harm detected, search term: " + secondForm.checkText + 
+                MessageBox.Show("Potenital harm detected, search term: " + secondForm.checkText +
                     ", results show: " + checkText);
                 string folder = @"C:\Users\djper\OneDrive\Documents\Year 3\.Final Study\.Main work\Program\ParentalControlAppExample\ParentalControlAppExample\AIWords.txt";
                 string newText = Environment.NewLine + secondForm.checkText;
@@ -210,6 +226,7 @@ namespace ParentalControlAppExample
                 Found = 1;
             }
 
+            
             return harm;
 
         }

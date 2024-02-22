@@ -43,86 +43,103 @@
             // 
             // LocButton
             // 
+            LocButton.BackColor = Color.Crimson;
+            LocButton.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             LocButton.Location = new Point(42, 50);
             LocButton.Name = "LocButton";
             LocButton.Size = new Size(128, 65);
             LocButton.TabIndex = 0;
             LocButton.Text = "Location";
-            LocButton.UseVisualStyleBackColor = true;
+            LocButton.UseVisualStyleBackColor = false;
             LocButton.Click += LocButton_Click;
             // 
             // AIbutton
             // 
+            AIbutton.BackColor = Color.Crimson;
+            AIbutton.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             AIbutton.Location = new Point(42, 124);
             AIbutton.Name = "AIbutton";
             AIbutton.Size = new Size(128, 65);
             AIbutton.TabIndex = 1;
             AIbutton.Text = "AI Monitor";
-            AIbutton.UseVisualStyleBackColor = true;
+            AIbutton.UseVisualStyleBackColor = false;
             AIbutton.Click += AIbutton_Click;
             // 
             // SOSButton
             // 
+            SOSButton.BackColor = Color.Crimson;
+            SOSButton.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             SOSButton.Location = new Point(42, 209);
             SOSButton.Name = "SOSButton";
             SOSButton.Size = new Size(128, 65);
             SOSButton.TabIndex = 2;
             SOSButton.Text = "SOS";
-            SOSButton.UseVisualStyleBackColor = true;
+            SOSButton.UseVisualStyleBackColor = false;
             SOSButton.Click += SOSButton_Click;
             // 
             // WebButton
             // 
+            WebButton.BackColor = Color.Crimson;
+            WebButton.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             WebButton.Location = new Point(42, 291);
             WebButton.Name = "WebButton";
             WebButton.Size = new Size(128, 65);
             WebButton.TabIndex = 3;
             WebButton.Text = "Website Filter";
-            WebButton.UseVisualStyleBackColor = true;
+            WebButton.UseVisualStyleBackColor = false;
             WebButton.Click += WebButton_Click;
             // 
             // AppButton
             // 
+            AppButton.BackColor = Color.Crimson;
+            AppButton.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             AppButton.Location = new Point(565, 50);
             AppButton.Name = "AppButton";
             AppButton.Size = new Size(128, 65);
             AppButton.TabIndex = 4;
             AppButton.Text = "Application filter";
-            AppButton.UseVisualStyleBackColor = true;
+            AppButton.UseVisualStyleBackColor = false;
             AppButton.Click += AppButton_Click;
             // 
             // ScrButton
             // 
+            ScrButton.BackColor = Color.Crimson;
+            ScrButton.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             ScrButton.Location = new Point(565, 124);
             ScrButton.Name = "ScrButton";
             ScrButton.Size = new Size(128, 65);
             ScrButton.TabIndex = 5;
             ScrButton.Text = "Screen limit";
-            ScrButton.UseVisualStyleBackColor = true;
+            ScrButton.UseVisualStyleBackColor = false;
             ScrButton.Click += ScrButton_Click;
             // 
             // LckButton
             // 
+            LckButton.BackColor = Color.Crimson;
+            LckButton.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             LckButton.Location = new Point(565, 209);
             LckButton.Name = "LckButton";
             LckButton.Size = new Size(128, 65);
             LckButton.TabIndex = 6;
             LckButton.Text = "Phone lock";
-            LckButton.UseVisualStyleBackColor = true;
+            LckButton.UseVisualStyleBackColor = false;
             LckButton.Click += LckButton_Click;
             // 
             // VPNButton
             // 
+            VPNButton.BackColor = Color.Crimson;
+            VPNButton.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             VPNButton.Location = new Point(565, 291);
             VPNButton.Name = "VPNButton";
             VPNButton.Size = new Size(128, 65);
             VPNButton.TabIndex = 7;
             VPNButton.Text = "VPN";
-            VPNButton.UseVisualStyleBackColor = true;
+            VPNButton.UseVisualStyleBackColor = false;
             VPNButton.Click += VPNButton_Click;
             // 
             // DisplayBox
             // 
+            DisplayBox.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             DisplayBox.Location = new Point(266, 69);
             DisplayBox.Name = "DisplayBox";
             DisplayBox.Size = new Size(232, 27);
@@ -137,6 +154,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.Teal;
             ClientSize = new Size(800, 450);
             Controls.Add(DisplayBox);
             Controls.Add(VPNButton);
