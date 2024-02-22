@@ -191,6 +191,7 @@ namespace ParentalControlAppExample
         }
 
         public string harm;
+        public int notified = 0;
         public string WordingCheck(string checkText)
         {
 
@@ -203,6 +204,7 @@ namespace ParentalControlAppExample
                 if (line.Contains(checkText))
                 {
                     harm = "yes";
+                    notified = 1;
                     break;
                 }
                 else
@@ -212,14 +214,14 @@ namespace ParentalControlAppExample
             }
 
 
-            if (harm == "yes" && secondForm.related != "hell")
+            if (harm == "yes")
             {
                 MessageBox.Show("Potenital harm detected, search term: " + checkText);
             }
-            else if (harm == "yes" && secondForm.related == "hell" && Found == 0)
+            else if (secondForm.related == "hell")
             {
-                MessageBox.Show("Potenital harm detected, search term: " + secondForm.checkText +
-                    ", results show: " + checkText);
+                MessageBox.Show("Potenital harm detected, search term: " + checkText +
+                    ", results show: " + secondForm.related);
                 string folder = @"C:\Users\djper\OneDrive\Documents\Year 3\.Final Study\.Main work\Program\ParentalControlAppExample\ParentalControlAppExample\AIWords.txt";
                 string newText = Environment.NewLine + secondForm.checkText;
                 File.AppendAllText(folder, newText.ToLower());

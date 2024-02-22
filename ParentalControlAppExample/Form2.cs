@@ -153,7 +153,7 @@ namespace ParentalControlAppExample
                     text = "Showing results for " + UserSearch;
                     MessageBox.Show(text);
 
-                    if (text.ToLower().Contains("devil"))
+                    if (text.ToLower().Contains("devil") && firstForm.Found == 0)
                     {
                         related = "hell";
                     }
@@ -172,11 +172,12 @@ namespace ParentalControlAppExample
                 MessageBox.Show("Access Denied");
             }
 
-            if (firstForm.Found == 0)
+            if (Form1.AIOption == "ON" && firstForm.notified == 0)
             {
-                firstForm.WordingCheck(related);
-                related = "Found";
+                firstForm.WordingCheck(checkText.ToLower());
             }
+
+            firstForm.notified = 0;
 
         }
 
